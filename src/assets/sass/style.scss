@@ -1,0 +1,43 @@
+@import './libs/bootstrap-reboot';
+@import './libs/font';
+@import './base/mixins';
+@import './base/variables';
+@import './blocks/header';
+@import './blocks/promo';
+@import './blocks/cards';
+@import './blocks/contact';
+@import './blocks/buttons';
+@import './blocks/about';
+
+*, ::after, ::before { 
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+.container {
+    background-color: #F7F7F7;
+}
+
+html {
+    font-size: 62.5%; // К примеру, мы ходим перевести 10px в %: нам нужно 10/16(размер в html по умолчанию) * 100 = 62,5%
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #777777;
+    font-size: 1.6rem;
+    letter-spacing: .2rem;
+    padding: 5rem;
+    background-color: white
+}
+
+
+
+
+
+
