@@ -1,8 +1,13 @@
 .header {
     position: relative;
     height: 95vh;
-    background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0.03%, rgba(1, 1, 1, 0.7) 99.94%), url(../img/header-background.jpg) center / cover no-repeat;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%); //это свойство обрезает элементы. Есть сайт https://bennettfeely.com/clippy/ - это генератор этого свойства 
+    background: linear-gradient(90deg, rgba($color-brown-light, 0.7) 0.03%, rgba($color-black, 0.7) 99.94%), url(../img/header-background.jpg) center / cover no-repeat;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%); //это свойство обрезает элементы. Есть сайт https://bennettfeely.com/clippy/ - это генератор этого свойства
+
+    @media (min-resolution: 192dpi) and (min-width: 670px), (min-width: 1340px) { //Если плотность пикселей больше этого значения, то применяется следующее изображение:
+        background: linear-gradient(90deg, rgba($color-brown-light, 0.7) 0.03%, rgba($color-black, 0.7) 99.94%), url(../img/header-background2x.jpg) center / cover no-repeat;
+    }
+
     &__logo {
         position: absolute;
         height: 7rem;
@@ -17,74 +22,8 @@
         transform: translate(-50%,-50%);
         width: 100%;
         text-align: center;
-    }
-.title-first {
-    color: #FFFFFF;
-    text-transform: uppercase;
-    font-family: 'Roboto', sans-serif;
-
-    &__main {
-        display: block;
-        font-weight: 800;
-        font-size: 5rem;
-        line-height: 6rem;
-        letter-spacing: 1rem;
-        margin-bottom: 1rem;
-        animation-name: leftToRight;
-        animation-duration: 1s;
-        animation-delay: 0.5s;
-        animation-timing-function: ease;
-        backface-visibility: hidden;
-
-    }
-    &__secondary {
-        display: block;
-        font-weight: 100;
-        font-size: 4rem;
-        line-height: 4.8rem;
-        letter-spacing: .5rem;
-        text-transform: none;
-        animation-name: rightToLeft;
-        animation-duration: 1s;
-        animation-delay: 0.5s;
-        animation-timing-function: ease;
-        backface-visibility: hidden;
-        margin-bottom: 5rem;
-
-    }
-}
-
-@keyframes leftToRight {
-    0% {
-        opacity: 0;
-        transform: translateX(-10rem);
-    }
-
-    80% {
-        transform: translateX(1rem);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0rem);
-    }
-}
-
-@keyframes rightToLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(10rem);
-    }
-
-    80% {
-        transform: translateX(-1rem);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0rem);
+        @include respond (tab-land) {
+            top: 50%;
         }
     }
-
 }
-

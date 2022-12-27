@@ -1,40 +1,44 @@
+@import './abstracts/variables';
+@import './abstracts/mixins';
 @import './libs/bootstrap-reboot';
-@import './libs/font';
-@import './base/mixins';
-@import './base/variables';
+
+
+
+
+
+
+
+@import './blocks/animation';
+@import './base/base';
+@import './base/typography';
+@import './base/utulites';  
+
+
+@import './components/buttons';
+@import './components/button-text';
+@import './components/composition';
+@import './components/adventure-card';
+@import './components/tour-card';
+@import './components/feedBack-card';
+@import './components/bg-video';
+@import './components/form';
+
+@import './blocks/navigation';
+@import './blocks/grid';
 @import './blocks/header';
-@import './blocks/promo';
-@import './blocks/cards';
-@import './blocks/contact';
-@import './blocks/buttons';
-@import './blocks/about';
-
-*, ::after, ::before { 
-    text-decoration: none;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
-}
+@import './blocks/footer';
 
 
-.container {
-    background-color: #F7F7F7;
-}
+@import './pages/home';
 
-html {
-    font-size: 62.5%; // К примеру, мы ходим перевести 10px в %: нам нужно 10/16(размер в html по умолчанию) * 100 = 62,5%
-}
 
-body {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    color: #777777;
-    font-size: 1.6rem;
-    letter-spacing: .2rem;
-    padding: 5rem;
-    background-color: white
-}
+
+
+
+
+
+
+
 
 
 

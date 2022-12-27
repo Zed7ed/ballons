@@ -1,0 +1,34 @@
+*, ::after, ::before { 
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html {
+    font-size: 62.5%; // К примеру, мы ходим перевести 10px в %: нам нужно 10/16(размер в html по умолчанию) * 100 = 62,5%
+    @include respond (tab-land) {
+        font-size: 56.25%; // это равно 9px
+    }
+    @include respond (tab-port) {
+        font-size: 50%;
+    }
+    @include respond (phone) {
+        font-size: 30%;
+    }
+    @include respond (big-screen) {
+        font-size: 75%;
+    }
+}
+
+body {
+    padding: 5rem;
+    background-color: $color-white;
+}
+
+.container {
+    background-color: #F7F7F7;
+    position: relative;
+    z-index: 0; //без определенного позиционирования z-index работать не будет (хз почему)
+}

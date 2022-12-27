@@ -1,0 +1,65 @@
+.btn {
+ 
+    &, &:link, &:visited { // оставил пустой "амперсант", для того чтобы свойства применялись не только к &:link, &:visited, но также и к btn
+        @include style-link ($color-gray);
+        background: $color-white;
+        border-radius: 5rem;
+        padding: 1.5rem 4rem;
+        font-size: 2rem;
+        position: relative;
+        transition: all .3s; //крутые прогреры не ставят "ноль" в таких случаях
+        border: none;
+        cursor: pointer;
+        @include respond (tab-land) {
+            font-size: 1.8rem;
+            padding: 1.5rem 3.7rem;
+        }
+        @include respond (tab-port) {
+            padding: 2rem 5rem;
+        }
+    }
+    &:hover {
+        transform: translateY(-.4rem);
+        box-shadow:$box-shadow;
+        &::after
+            {
+               transform: scaleX(1.5) scaleY(1.7);    
+               opacity: 0;
+            }
+    }
+    &:active {
+        transform: translateY(-3rem);
+        box-shadow:$box-shadow;
+    }
+    &::after{
+        content: ""; //это свойство нужно писать вообще всегда, инача всевдоэлемен работать не будет
+        background: $color-white;
+        width: 100%;
+        height: 100%;
+        border-radius: 5rem;
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+    }
+
+    &_animated {
+        animation: BtnToUp .5s ease-out .5s;
+        animation-fill-mode: backwards;
+    }
+}    
+
+.btn_brown {
+    &, &:link, &:visited {
+        background: $color-brown-dark;
+        color: $color-white;
+        &::after{  
+            background: $color-brown-dark;
+            }
+        
+            
+    
+        }
+    }
